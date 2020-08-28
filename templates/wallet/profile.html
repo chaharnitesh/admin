@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+
+
+<p style='color:green' > Wallet Balance:{{user1.balance}}</p>
+
+<h1>About me</h1>
+
+<p>Thanks for visiting my site! Check all this cool stuff about wallet!</p>
+
+<br>
+<li><a href="{% url 'passbook' %}">Transaction History</a></li>
+
+<li><a href="{% url 'addition' %}">Total transfer money & wallet added Money sum</a></li>
+
+
+
+</div>
+{% endblock %}

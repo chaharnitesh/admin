@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+
+<ul>
+    {% for jk in send_money %}
+    {% if jk.sender != jk.receiver %}
+    <li>
+        Paid to <b> {{jk.receiver}} </b> <span  style='color:red'> :-{{jk.amount }}</span> <br>  <div class="mb-1 text-muted">{{jk.timestamp}}</div>
+        
+    </li>
+    <br>
+    {% endif %}
+    {% endfor %}
+    
+    {% for ph in receive_money %}
+    {% if ph.sender != ph.receiver %}
+    <li>
+        Received from <b> {{ph.sender}} </b> <span style='color:green'> :+{{ph.amount }}</span> <br> <div class="mb-1 text-muted">{{ph.timestamp}}</div>
+        
+    </li>
+    <br>
+    {% endif %}
+    {% endfor %}
+    {% for pg in wallet_money %}
+    <li>
+        Money added to wallet  <span style='color:green'> :+{{pg.amount }}</span>  <br> <div class="mb-1 text-muted">{{pg.timestamp}}</div>
+        
+    </li>
+    <br>
+    {% endfor %}
+</ul>
+
+
+
+</div>
+
+{% endblock %}

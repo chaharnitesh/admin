@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+
+{% for k1 in wallet_add %}
+
+<li style='color:green' >Total Money added to wallet in last one Month:{{k1.total_sum}}
+</li>
+{% endfor %}
+
+<br>
+
+{% for k2 in wallet_receive %}
+
+<li style='color:green' >Total Money  received in last one Month:{{k2.total_sum}}
+</li>
+{% endfor %}
+
+<br>
+{% for k in wallet_transfer %}
+<li style='color:red' >Total Money trasfer  in last one Month:{{k.transfer_sum}}</li>
+
+
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
